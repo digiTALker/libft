@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/04 16:09:42 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/09 20:47:59 by cmyrtle          ###   ########.fr       */
+/*   Created: 2020/05/09 15:40:48 by cmyrtle           #+#    #+#             */
+/*   Updated: 2020/05/09 16:24:27 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t i;
-	unsigned char *p_src;
-	unsigned char *p_dst;
-
-	p_src = (unsigned char *)src;
-	p_dst = (unsigned char *)dest;
 	i = 0;
-	while (i < n)
+
+	while (n-- >= 0)
 	{
-		if (*(p_dst + i) == (unsigned char)c)
+		if (((*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i)) != 0))
 		{
-			return (p_dst + i + 1);
+			return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
 		}
-		*(p_dst + i) = *(p_src + i);
+		else
+		{
+			return (0);
+		}
 		i++;
+
 	}
-	return (NULL);
+	
+	
+	return (0);
 }
