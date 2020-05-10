@@ -6,14 +6,14 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 20:55:17 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/04 14:02:27 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/10 21:34:34 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
-	{
-		write(fd, c, 1);
-		return 0;
-	}
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+	return ;
+}
