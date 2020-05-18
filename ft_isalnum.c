@@ -6,13 +6,16 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 12:49:29 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/11 12:53:09 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/18 20:24:56 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_isalnum(int c)
+int		ft_isalnum(int c)
 {
-	return(ft_isalpha(c) || ft_isdigit(c));
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (c);
+	else
+		return (0);
 }
