@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:32:00 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/17 22:49:36 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/19 11:12:14 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ void		*ft_calloc(size_t num, size_t size);
 char		*ft_itoa(int n);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 int			strncmp(const char *s1, const char *s2, size_t n);
-
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+void		ft_putendl_fd(char *s, int fd);
+char		*ft_strdup(const char *s1);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		**ft_split(char const *s, char c);
 
 #endif

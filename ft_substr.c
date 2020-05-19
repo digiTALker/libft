@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/14 12:47:44 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/18 22:54:19 by cmyrtle          ###   ########.fr       */
+/*   Created: 2020/05/18 21:36:54 by cmyrtle           #+#    #+#             */
+/*   Updated: 2020/05/19 19:44:06 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*p;
+	size_t	i;
+	size_t	j;
+	char	*p_temps;
 
-	p = (unsigned char*)malloc(num * size);
-	if (p == NULL)
+	p_temps = (char*)malloc(sizeof(*s) * (len + 1));
+	if (!p_temps)
 		return (NULL);
-	ft_bzero((unsigned char*)p, num * size);
-	return (p);
+	j = 0;
+	i = 0 + start;
+	while (s[i] && j < len)
+	{
+		if (i >= start && j < len)
+		{
+			p_temps[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	p_temps[j] = '\0';
+	return (p_temps);
 }

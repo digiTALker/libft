@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 21:01:12 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/09 21:01:12 by cmyrtle          ###   ########.fr       */
+/*   Created: 2020/05/18 22:49:33 by cmyrtle           #+#    #+#             */
+/*   Updated: 2020/05/18 22:49:47 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- void	bzero(void *s, size_t n)
- {
-	 while (n--)
-	 {
+void		bzero(void *s, size_t n)
+{
+	while (n--)
+	{
 		*(unsigned char *)s = '\0';
-	 }
-	 return;
- }
+	}
+	return ;
+}
