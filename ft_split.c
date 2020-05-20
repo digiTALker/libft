@@ -6,14 +6,13 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 10:40:33 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/19 19:50:16 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/20 10:44:09 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-static int		how_many_slices(char const *s, char c)
+static size_t		how_many_slices(char const *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -41,46 +40,43 @@ static size_t	slice_len(char const *s, char c)
 	return (len);
 }
 
-static void		*free_result(char **result, size_t j)
+static void		*ft_purge(char **array, size_t j)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < j)
 	{
-		free(result[i]);
+		free(array[i]);
 		i++;
 	}
-	free(result);
+	free(array);
 	return (NULL);
 }
 
-main()
-{
-	char *s = "asdfdsf asd";
-	char c = 's';
-  
-	char	**result;
+char		**ft_split(char const *s, char c)
+{	
+	char	**array;
 	size_t	i;
-	size_t	len;
 	size_t	total;
+	size_t	len;
 	
 	i = 0;
 	total = 0;
 	len = how_many_slices(s, c);
-	if (!(result = (char**)malloc(sizeof(char*) * (len + 1))))
+	if (!(array = (char**)malloc(sizeof(char*) * (len + 1))))
 		return (NULL);
 	while (i < len)
 	{
 		while (s[total] && s[total] == c)
 			total++;
-		result[i] = ft_substr(s, total, slice_len(&s[total], c));
-		if (result[i] == NULL)
-			return (free_result(result, i));
+		array[i] = ft_substr(s, total, slice_len(&s[total], c));
+		if (array[i] == NULL)
+			return (ft_purge(array, i));
 		while (s[total] && s[total] != c)
 			total++;
 		i++;
 	}
-	result[i] = NULL;
-	return (result);
+	array[i] = NULL;
+	return (array);
 }

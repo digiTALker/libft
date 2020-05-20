@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 15:40:48 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/20 13:57:20 by cmyrtle          ###   ########.fr       */
+/*   Created: 2020/05/20 13:08:12 by cmyrtle           #+#    #+#             */
+/*   Updated: 2020/05/20 16:39:14 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t i;
-	i = 0;
+	const char	new_line = '\n';
 
-	while (n-- > 0)
-	{
-		if (((*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i)) != 0))
-		{
-			return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
-		}
-		else
-		{
-			return (0);
-		}
-		i++;
-
-	}
-	
-	
-	return (0);
+	write(fd, s, ft_strlen(s));
+	write(fd, &new_line, 1);
 }

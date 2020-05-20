@@ -6,15 +6,14 @@
 #    By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/05 21:59:14 by cmyrtle           #+#    #+#              #
-#    Updated: 2020/05/19 21:50:33 by cmyrtle          ###   ########.fr        #
+#    Updated: 2020/05/20 22:31:58 by cmyrtle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc -c
-OBFLG =-Wall -Wextra -Werror -std=c99
-
-SRC= ft_*.c
-#	ft_isalnum.c\
+OBFLG =-Wall -Wextra -Werror
+#ft_*.c#
+SRC=ft_isalnum.c\
 	ft_isascii.c\
 	ft_isprint.c\
 	ft_toupper.c\
@@ -47,8 +46,8 @@ SRC= ft_*.c
 	ft_putchar_fd.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
-	ft_putnbr_fd.c\ 
-	#
+	ft_putnbr_fd.c 
+	
 	
 NAME=libft.a
 

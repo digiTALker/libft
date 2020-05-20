@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 15:40:48 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/20 13:57:20 by cmyrtle          ###   ########.fr       */
+/*   Created: 2020/05/20 14:03:02 by cmyrtle           #+#    #+#             */
+/*   Updated: 2020/05/20 21:47:46 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
-	i = 0;
+	size_t	len;
+	char	*rtn;
 
-	while (n-- > 0)
+	if (!s1)
+		return (NULL);	
+	while (ft_strchr(set, *s1) && s1)
+		s1++;
+	len = ft_strlen(s1);
+	while (ft_strchr(set, s1[len + 1]) && len)
 	{
-		if (((*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i)) != 0))
-		{
-			return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
-		}
-		else
-		{
-			return (0);
-		}
-		i++;
-
+		len--;
 	}
-	
-	
-	return (0);
+	rtn = ft_substr(s1, 0, len);
+	return (rtn);
 }

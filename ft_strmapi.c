@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/18 21:36:54 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/20 11:15:57 by cmyrtle          ###   ########.fr       */
+/*   Created: 2020/05/20 11:49:52 by cmyrtle           #+#    #+#             */
+/*   Updated: 2020/05/20 22:33:49 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
-	size_t	j;
-	char	*p_temps;
+	size_t	len;
+	char	*p_s;
 
-
-	if (!s)
+	i = 0;
+	if (!s || !f)
 		return (NULL);
-	if (!s[start] || start > ft_strlen(s))
-		return (ft_strdup(""));
-	p_temps = (char*)malloc(sizeof(*s) * (len + 1));
-	if (!p_temps)
+	len = ft_strlen(s);
+	if (!(p_s = malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	j = 0;
-	i = 0 + start;
-	while (s[i] && j < len)
+	while (i < len)
 	{
-		if (i >= start && j < len)
-		{
-			p_temps[j] = s[i];
-			j++;
-		}
+		p_s[i] = (*f)(i, (char)s[i]);
 		i++;
 	}
-	p_temps[j] = '\0';
-	return (p_temps);
+	p_s[i] = '\0';
+	return (p_s);
 }

@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:32:00 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/19 11:12:14 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/20 14:03:46 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void		ft_putendl_fd(char *s, int fd);
 char		*ft_strdup(const char *s1);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		**ft_split(char const *s, char c);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		*ft_strtrim(char const *s1, char const *set);
 
 #endif
