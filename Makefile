@@ -6,12 +6,12 @@
 #    By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/05 21:59:14 by cmyrtle           #+#    #+#              #
-#    Updated: 2020/05/20 22:53:04 by cmyrtle          ###   ########.fr        #
+#    Updated: 2020/05/22 19:55:54 by cmyrtle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc -c
-OBFLG =-Wall -Wextra -Werror
+CC=gcc
+OBFLG=-Wall -Wextra -Werror
 NAME=libft.a
 
 SRC=ft_isalnum.c\
@@ -52,7 +52,7 @@ SRC=ft_isalnum.c\
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(SRC) $(OBFLG)
+	$(CC) -c $(SRC) $(OBFLG)
 	ar rcs $(NAME) *.o		
 
 clean:
@@ -60,3 +60,7 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME)
 re: fclean all
+
+so:
+	$(CC) -c -fPIC $(SRC)
+	$(CC) -shared -o libft.so $(SRC)
