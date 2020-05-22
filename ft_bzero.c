@@ -6,17 +6,19 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 22:49:33 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/18 22:49:47 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/21 10:42:00 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		bzero(void *s, size_t n)
+void		ft_bzero(void *s, size_t n)
 {
-	while (n--)
+	while (n > 0)
 	{
 		*(unsigned char *)s = '\0';
+		s++;
+		n--;
 	}
 	return ;
 }

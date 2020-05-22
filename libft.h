@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:32:00 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/20 14:03:46 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/21 12:25:18 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void		*ft_memchr(const void *s, int c, size_t n);
 size_t		ft_strlen(const char *s);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
+int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_tolower(int c);
@@ -48,5 +49,6 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		**ft_split(char const *s, char c);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strtrim(char const *s1, char const *set);
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif

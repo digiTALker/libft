@@ -6,13 +6,14 @@
 #    By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/05 21:59:14 by cmyrtle           #+#    #+#              #
-#    Updated: 2020/05/20 22:31:58 by cmyrtle          ###   ########.fr        #
+#    Updated: 2020/05/20 22:53:04 by cmyrtle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc -c
 OBFLG =-Wall -Wextra -Werror
-#ft_*.c#
+NAME=libft.a
+
 SRC=ft_isalnum.c\
 	ft_isascii.c\
 	ft_isprint.c\
@@ -47,21 +48,15 @@ SRC=ft_isalnum.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c 
-	
-	
-NAME=libft.a
 
-all: START
+all: $(NAME)
 
-START:
+$(NAME):
 	$(CC) $(SRC) $(OBFLG)
-	ar rcs $(NAME) *.o	
-	
-$(NAME): 
-	START
+	ar rcs $(NAME) *.o		
 
 clean:
 	/bin/rm -f *.o
 fclean: clean
 	/bin/rm -f $(NAME)
-re: fclean	all
+re: fclean all
