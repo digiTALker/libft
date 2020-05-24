@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 21:36:54 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/20 11:15:57 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/24 21:48:17 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (!s[start] || start > ft_strlen(s))
 		return (ft_strdup(""));
-	p_temps = (char*)malloc(sizeof(*s) * (len + 1));
+	p_temps = (char*)malloc(sizeof(char) * (len + 1));
 	if (!p_temps)
 		return (NULL);
 	j = 0;

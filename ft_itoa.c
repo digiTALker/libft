@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 12:54:21 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/23 09:51:19 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/24 23:43:35 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ static char			*zero(void)
 
 static char			*below_zero(int n, size_t size)
 {
-	char	*p_buff;
-	int		n_tmp;
+	char			*p_buff;
+	unsigned int	n_tmp;
 
 	n_tmp = -n;
-	if ((p_buff = (char *)ft_calloc(size + 1, sizeof(char))) == NULL)
+	if ((p_buff = (char *)ft_calloc(size + 2, sizeof(char))) == NULL)
 		return (NULL);
 	*p_buff = '-';
 	while (n_tmp > 0)
 	{
-		p_buff[size - 1] = (n_tmp % 10) + 48;
+		p_buff[size] = (n_tmp % 10) + 48;
 		n_tmp = n_tmp / 10;
 		size--;
 	}
@@ -43,8 +43,8 @@ static char			*below_zero(int n, size_t size)
 
 static char			*above_zero(int n, size_t size)
 {
-	char	*p_buff;
-	int		n_tmp;
+	char			*p_buff;
+	long long int	n_tmp;
 
 	n_tmp = n;
 	if ((p_buff = ft_calloc(size + 1, sizeof(char))) == NULL)
@@ -60,11 +60,9 @@ static char			*above_zero(int n, size_t size)
 
 char				*ft_itoa(int n)
 {
-	size_t	n_tmp;
-	size_t	size;
-
-	if (n < 0)
-		n = -n;
+	long long	n_tmp;
+	size_t		size;
+	
 	n_tmp = n;
 	size = 0;
 	if (n != 0)
@@ -82,27 +80,4 @@ char				*ft_itoa(int n)
 	if (n > 0)
 		return (above_zero(n, size));
 	return (0);
-}
-
-int			main()
-{
-
-			char	*i1 = ft_itoa(-623);
-			char	*i2 = ft_itoa(156);
-			char	*i3 = ft_itoa(-0);
-
-			if (strcmp(i1, "-623")) {
-				
-				return(0);
-			}
-			if (strcmp(i2, "156")) {
-				
-				return(0);
-			}
-			if (strcmp("0", i3)) {
-			
-				return(0);
-			}
-			exit(1);
-			
 }
