@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 10:40:33 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/20 10:44:09 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/24 19:48:53 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char		**ft_split(char const *s, char c)
 	size_t	total;
 	size_t	len;
 	
+	if (!s || !c)
+		return (NULL);
 	i = 0;
 	total = 0;
 	len = how_many_slices(s, c);
@@ -70,6 +72,11 @@ char		**ft_split(char const *s, char c)
 	{
 		while (s[total] && s[total] == c)
 			total++;
+		if(s[total] == '\0')		
+		{
+			array[i] = NULL;
+			return (array);
+			}
 		array[i] = ft_substr(s, total, slice_len(&s[total], c));
 		if (array[i] == NULL)
 			return (ft_purge(array, i));
