@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 12:54:21 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/15 22:31:08 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/23 09:51:19 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,27 @@ char				*ft_itoa(int n)
 	if (n > 0)
 		return (above_zero(n, size));
 	return (0);
+}
+
+int			main()
+{
+
+			char	*i1 = ft_itoa(-623);
+			char	*i2 = ft_itoa(156);
+			char	*i3 = ft_itoa(-0);
+
+			if (strcmp(i1, "-623")) {
+				
+				return(0);
+			}
+			if (strcmp(i2, "156")) {
+				
+				return(0);
+			}
+			if (strcmp("0", i3)) {
+			
+				return(0);
+			}
+			exit(1);
+			
 }
