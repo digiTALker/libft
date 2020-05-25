@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:28:32 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/25 09:39:08 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 15:36:34 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t		i;
+	long long	i;
 	long long	res;
-	int			sign;
+	long long	sign;
 
 	i = 0;
 	res = 0;

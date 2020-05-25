@@ -6,16 +6,16 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 10:40:33 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/24 20:01:41 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 21:48:46 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	h_many_slices(char const *s, char c)
+static int		h_many_slices(char const *s, char c)
 {
-	size_t	count;
-	size_t	i;
+	int	count;
+	int	i;
 
 	count = 0;
 	i = 0;
@@ -30,9 +30,9 @@ static size_t	h_many_slices(char const *s, char c)
 	return (count);
 }
 
-static size_t	slice_len(char const *s, char c)
+static int		slice_len(char const *s, char c)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	while (s[len] != c && s[len] != '\0')
@@ -40,9 +40,9 @@ static size_t	slice_len(char const *s, char c)
 	return (len);
 }
 
-static void		*ft_purge(char **array, size_t j)
+static void		*ft_purge(char **array, int j)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < j)
@@ -56,9 +56,9 @@ static void		*ft_purge(char **array, size_t j)
 
 char			**ft_split(char const *s, char c)
 {
-	char	**array;
-	size_t	i;
-	size_t	total;
+	char			**array;
+	int				i;
+	unsigned int	total;
 
 	if (!s || !c)
 		return (NULL);
