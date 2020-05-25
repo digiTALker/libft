@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 22:02:09 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/24 18:26:16 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:43:47 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ char	*ft_strdup(const char *s1)
 	p_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!p_str)
 		return (NULL);
-	
-	i = 0;	
+	i = 0;
 	while (s1[i])
 	{
 		p_str[i] = s1[i];

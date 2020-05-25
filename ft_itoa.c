@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 12:54:21 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/24 23:43:35 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:46:31 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char				*ft_itoa(int n)
 {
 	long long	n_tmp;
 	size_t		size;
-	
+
 	n_tmp = n;
 	size = 0;
 	if (n != 0)

@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:28:32 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/24 18:02:17 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:39:08 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	res = 0;
-	sign = 1;	
+	sign = 1;
 	while ((7 < str[i] && str[i] <= 13) || str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')

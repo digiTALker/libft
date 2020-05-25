@@ -6,16 +6,15 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:32:00 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/22 15:17:51 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:37:37 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <unistd.h> /*write*/
-#include <string.h> /*memset memcpy memccpy*/
-#include <stdlib.h> /*size_t */
+#include <unistd.h>
+#include <stdlib.h>
 
 void		ft_putchar_fd(char c, int fd);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
@@ -39,7 +38,7 @@ char		*ft_strcpy(char *dst, const char *src);
 void		*ft_calloc(size_t num, size_t size);
 char		*ft_itoa(int n);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
-int			strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_substr(char const *s, unsigned int start, size_t len);

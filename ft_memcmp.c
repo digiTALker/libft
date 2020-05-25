@@ -6,15 +6,11 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:40:48 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/24 13:44:12 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:35:17 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-
-#include <stdio.h>  //Для printf
-#include <string.h>   //Для memcpy
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -32,7 +28,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 			if (p_str1[i] != p_str2[i])
 				return (p_str1[i] - p_str2[i]);
 			i++;
-		}	
+		}
 	}
 	return (0);
 }

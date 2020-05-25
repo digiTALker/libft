@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 21:36:54 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/24 21:48:17 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:46:02 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 	char	*p_temps;
-
 
 	if (!s)
 		return (NULL);

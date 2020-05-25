@@ -6,14 +6,14 @@
 #    By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/05 21:59:14 by cmyrtle           #+#    #+#              #
-#    Updated: 2020/05/24 10:22:39 by cmyrtle          ###   ########.fr        #
+#    Updated: 2020/05/25 09:05:37 by cmyrtle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
 OBFLG=-Wall -Wextra -Werror
 NAME=libft.a
-HEADER = libft.h
+HEADER =libft.h
 
 SRC=ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c\
 	ft_toupper.c ft_tolower.c\
@@ -26,7 +26,7 @@ SRC=ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c\
 	ft_split.c\
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 
-OBJ = ft_atoi.o ft_itoa.o\
+OBJ =ft_atoi.o ft_itoa.o\
 	ft_bzero.o\
 	ft_calloc.o\
 	ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o\

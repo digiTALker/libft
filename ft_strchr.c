@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 14:31:19 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/23 00:08:29 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/25 09:44:07 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char		*check_nol(char *p_s)
 
 	i = 0;
 	while (p_s[i] != '\0')
-	{		
+	{
 		i++;
 	}
 	return (p_s + i);
