@@ -6,14 +6,16 @@
 #    By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/05 21:59:14 by cmyrtle           #+#    #+#              #
-#    Updated: 2020/05/25 21:33:15 by cmyrtle          ###   ########.fr        #
+#    Updated: 2020/05/27 23:20:13 by cmyrtle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=gcc
-OBFLG=-Wall -Wextra -Werror
-NAME=libft.a
-HEADER =libft.h
+CFLAGS = -Wall -Wextra -Werror
+NAME = libft.a
+HEADER = libft.h
+INCLUDES = ./
+
+.PHONY: all bonus clean fclean re
 
 SRC= ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c\
 	ft_toupper.c ft_tolower.c\
@@ -26,7 +28,7 @@ SRC= ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c\
 	ft_split.c\
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
 
-OBJ =ft_atoi.o ft_itoa.o\
+OBJ_FILES =ft_atoi.o ft_itoa.o\
 	ft_bzero.o\
 	ft_calloc.o\
 	ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o\
@@ -42,15 +44,19 @@ OBJ =ft_atoi.o ft_itoa.o\
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFTH)
-	$(CC) -c $(SRC) $(OBFLG)
-	ar rcs $(NAME) $(OBJ)
-	ranlib $(NAME)		
+$(NAME): $(OBJ_FILES)
+	ar rc $(NAME)	$^
+	ranlib $(NAME)
+
+%.o: %.c $(HEADER)
+	gcc -c $(CFLAGS) -I$(INCLUDES) $<
 
 clean:
-	/bin/rm -f $(OBJ) $(BONUS_OBJECTS)
+	/bin/rm -f $(OBJ_FILES) $(BONUS_OBJECTS)
+
 fclean: clean
 	/bin/rm -f $(NAME)
+
 re: fclean all
 
 BONUS = ft_lstnew.c\
@@ -73,10 +79,6 @@ BONUS_OBJECTS = ft_lstnew.o\
         ft_lstiter.o\
         ft_lstmap.o\
 
-bonus: $(BONUS_OBJECTS) $(LIBFTH)
-	$(CC) -c $(SRC) $(BONUS)
-	ar rcs $(NAME) $(BONUS_OBJECTS)
-
-so:
-	$(CC) -c -fPIC $(SRC) $(BONUS)
-	$(CC) -shared -o libft.so $(SRC) $(BONUS)
+bonus: $(BONUS_OBJECTS)
+	ar rc $(NAME) $^
+	ranlib $(NAME)

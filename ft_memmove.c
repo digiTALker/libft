@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 22:40:51 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/10 21:13:53 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/27 21:32:58 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t i;
 
 	i = 0;
+	if (dest == src)
+		return (dest);
 	if (src > dest)
 	{
 		while (i < n)
@@ -26,7 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 		return (dest);
 	}
-	if (src < dest)
+	else if (src < dest)
 	{
 		while (n--)
 		{
@@ -34,5 +36,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 		return (dest);
 	}
-	return (0);
+	return (dest);
 }

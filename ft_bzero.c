@@ -6,7 +6,7 @@
 /*   By: cmyrtle <cmyrtle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 22:49:33 by cmyrtle           #+#    #+#             */
-/*   Updated: 2020/05/25 09:14:46 by cmyrtle          ###   ########.fr       */
+/*   Updated: 2020/05/26 17:44:09 by cmyrtle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 void		ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
-	{
-		*(unsigned char *)s = '\0';
-		s++;
-		n--;
-	}
-	return ;
+	ft_memset(s, '\0', n);
 }
